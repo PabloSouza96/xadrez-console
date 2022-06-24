@@ -9,12 +9,14 @@
         public Tabuleiro tab { get; protected set; }
         //Acessada por outras classes e alterada por ela mesma e pelas subclasses
 
-        public Peca(Posicao posicao, Tabuleiro tab, Cor cor)
+        public Peca(Tabuleiro tab, Cor cor)
         {
-            this.posicao = posicao;
+            this.posicao = null;
             this.tab = tab;
             this.cor = cor;
             this.qteMovimentos = 0;
+            //Diz qual é o tabuleiro e qual é a cor
+            //Posição iniciando nula e e movimentos zero
         }
     }
 }

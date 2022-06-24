@@ -5,20 +5,27 @@
         public int linhas { get; set; }
         public int colunas { get; set; }
         private Peca[,] pecas;
-        //não pode ser acessada por "alguém" de fora
+        //Não pode ser acessada por "alguém" de fora
 
         public Tabuleiro(int linhas, int colunas)
         {
             this.linhas = linhas;
             this.colunas = colunas;
             pecas = new Peca[linhas, colunas];
-            //criando tabuleiro, instanciando a matriz de peças e definindo número de linhas e colunas
+            //Criando tabuleiro, instanciando a matriz de peças e definindo número de linhas e colunas
         }
 
         public Peca peca(int linha, int coluna)
-        //método público que pode acessar uma peça
+        //Método público que pode acessar uma peça
         {
             return pecas[linha, coluna];
+        }
+
+        public void colocarPeca(Peca p, Posicao pos)
+        {
+            pecas[pos.linha, pos.coluna] = p;
+            p.posicao = pos;
+            //Acessa a matriz na posição linha e coluna
         }
     }
 }

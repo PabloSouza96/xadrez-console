@@ -6,7 +6,7 @@ namespace xadrez_console
     class Tela
     {
         public static void imprimirTabuleiro(Tabuleiro tab)
-        //recebe e imprime o tabuleiro
+        //Recebe e imprime o tabuleiro
         {
             for (int i=0; i<tab.linhas; i++)
             {
@@ -16,12 +16,12 @@ namespace xadrez_console
                     {
                         Console.Write("- ");
                     }
-                    //se for nulo, imprime -
+                    //Se for nulo, imprime -
                     else
                     {
                         Console.Write(tab.peca(i, j) + " ");
                     }
-                    //se não for nulo, imprime a peça
+                    //Se não for nulo, imprime a peça
                 }
                 Console.WriteLine();
             }
