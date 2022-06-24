@@ -14,5 +14,11 @@
             pecas = new Peca[linhas, colunas];
             //criando tabuleiro, instanciando a matriz de peças e definindo número de linhas e colunas
         }
+
+        public Peca peca(int linha, int coluna)
+        //método público que pode acessar uma peça
+        {
+            return pecas[linha, coluna];
+        }
     }
 }
