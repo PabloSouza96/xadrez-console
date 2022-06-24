@@ -21,11 +21,49 @@
             return pecas[linha, coluna];
         }
 
+        public Peca peca(Posicao pos)
+        {
+            return pecas[pos.linha, pos.coluna];
+        }
+
+        public bool existePeca(Posicao pos)
+        {
+            validarPosicao(pos);
+            return peca(pos) != null;
+            //Se der erro de validação de posição, lança a exceção "Posição inválida!"
+            //Se a peça na posição não for nula, significa que tem uma peça na posição
+        }
+
         public void colocarPeca(Peca p, Posicao pos)
         {
+            if (existePeca(pos))
+            {
+                throw new TabuleiroException("Já existe uma peça nessa posição!");
+            }
             pecas[pos.linha, pos.coluna] = p;
             p.posicao = pos;
             //Acessa a matriz na posição linha e coluna
+        }
+
+        public bool posicaoValida(Posicao pos)
+        {
+            if (pos.linha < 0 || pos.linha >= linhas || pos.coluna < 0 || pos.coluna >= colunas)
+            {
+                return false;
+            }
+            return true;
+            //Método para testar se uma posição é valida ou não
+            //Não foi preciso colocar o else, pq o return corta o método
+        }
+
+        public void validarPosicao(Posicao pos)
+        {
+            if (!posicaoValida(pos))
+            {
+                throw new TabuleiroException("Posição inválida!");
+            }
+            //Se a posição passada não for válida, vai lançar uma exceção
+            //Lança a exceção e corta a execução
         }
     }
 }
