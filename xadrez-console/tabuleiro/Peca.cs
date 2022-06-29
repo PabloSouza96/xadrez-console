@@ -1,6 +1,7 @@
 ﻿namespace tabuleiro
 {
-    class Peca
+    abstract class Peca
+    //Classe abstrata não pode ser instanciada, apenas herdada
     {
         public Posicao posicao { get; set; }
         //Acessada e alterada pelas outras classes
@@ -23,5 +24,10 @@
         {
             qteMovimentos++;
         }
+
+        public abstract bool[,] movimentosPossiveis();
+        //Marca na matriz verdadeiro para um movimento possível e falso para onde não for
+        //Abstrato pq não pode ser implementado na Peça, pq a regra de movimentos depende de cada peça específica
+
     }
 }
