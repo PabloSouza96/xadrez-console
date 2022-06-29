@@ -18,5 +18,10 @@
             //Diz qual é o tabuleiro e qual é a cor
             //Posição iniciando nula e e movimentos zero
         }
+
+        public void incrementarQteMovimentos()
+        {
+            qteMovimentos++;
+        }
     }
 }

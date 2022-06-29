@@ -45,6 +45,20 @@
             //Acessa a matriz na posição linha e coluna
         }
 
+        public Peca retirarPeca(Posicao pos)
+        {
+            if (peca(pos) == null)
+            {
+                return null;
+                //Se não tiver peça pra ser retirada, retorna nulo
+            }
+            Peca aux = peca(pos);
+            aux.posicao = null;
+            pecas[pos.linha, pos.coluna] = null;
+            return aux;
+            //Retira a peça e marca a posição no tabuleiro como nula
+        }
+
         public bool posicaoValida(Posicao pos)
         {
             if (pos.linha < 0 || pos.linha >= linhas || pos.coluna < 0 || pos.coluna >= colunas)
